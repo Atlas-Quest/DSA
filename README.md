@@ -16,10 +16,10 @@ This repository serves as a personal practice ground for implementing and unders
 
 ## Usage
 
-Run any implementation using `ts-node`:
+Run any file:
 
 ```bash
-npx ts-node binary_search.ts
+npx tsx binary_search.ts
 ```
 
 ## Structure
