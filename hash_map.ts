@@ -1,17 +1,7 @@
-interface Event {
-  id: string;
-  eventType: string;
-  timestamp: Date;
-}
+const seen = new Set<string>();
 
-export function PreventDuplicateEvents(events: Array<Event>) {
-  const duplicateEvents: Record<string, boolean> = {};
-
-  for (const event of events) {
-    if (duplicateEvents[event.id]) {
-      console.log("Duplicate event found:", event);
-    }
-
-    duplicateEvents[event.id] = true;
-  }
+export function isDuplicateEvent(eventId: string): boolean {
+  if (seen.has(eventId)) return true;
+  seen.add(eventId);
+  return false;
 }
